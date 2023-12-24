@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ https://www.springframework.org/schema/context
+ https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Setter method has been used for dependency injection -->
+	<bean class="com.spring_core.student" name="student_1">
+		<property name="studentId">
+			<value> 121</value>
+		</property>
+		<property name="studentName">
+			<value>Raushan Kumar</value>
+		</property>
+		<property name="studentAdress">
+			<value>Bihar</value>
+		</property>
+	</bean>
+
+	<bean class="com.spring_core.student" name="student_2">
+		<property name="studentId">
+			<value> 122</value>
+		</property>
+		<property name="studentName">
+			<value>Ramesh Kumar</value>
+		</property>
+		<property name="studentAdress">
+			<value>Bangalore</value>
+		</property>
+	</bean>
+
+	<!-- Value has been used as attribute -->
+
+	<bean class="com.spring_core.student" name="student_3">
+		<property name="studentId" value="123" />
+		<property name="studentName" value="Rajesh bhai" />
+		<property name="studentAdress" value="Kashmir" />
+	</bean>
+
+	<!-- schema p has been used where code has been deduced to a single line -->
+	<bean class="com.spring_core.student" name="student_4"
+		p:studentId="124" p:studentName="Priya Ranjan" p:studentAdress="Patna" />
+		
+	<bean class="com.spring_core.student" name="student5" p:studentId="125" p:studentName="Yadav Jee" p:studentAdress="Jharkhand"/>
+
+</beans>

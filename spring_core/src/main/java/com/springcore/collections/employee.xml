@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/p 
+ http://www.springframework.org/schema/util 
+ http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+		<util:properties id="u">
+			<prop key="url">jdbc:mysql://localhost:3306/mydb</prop>
+		</util:properties>
+
+	<bean class="com.springcore.collections.employee" name="employee1">
+		<property name="name">
+			<value>Raushan Kumar</value>
+		</property>
+		<property name="phone">
+			<list>
+				<value>947007345</value>
+				<value>947007345</value>
+				<value>947007345</value>
+				<value>947007345</value>
+			</list>
+		</property>
+		<property name="address">
+			<set>  <!-- set doesn't contain the duplicate value. -->
+				<value>Bihar</value>
+				<value>Bangalore</value>
+				<value>Patna</value>
+				<value>Bihar</value>
+			</set>
+		</property>
+		
+		<property name="course">
+			<map>
+			<entry key="java" value="3 months"/>
+			<entry key="python" value="3 months"/>
+			<entry key="spring" value="3 months"/>
+			</map>
+		</property>
+		<property name="add_prop">
+		<props>
+		<prop key="+91">India</prop>
+		<prop key="+04">America</prop>
+		</props>
+		</property>
+	
+		<property name="util_proProperties" value="#{u.url}"/>
+
+	</bean>
+
+</beans>
